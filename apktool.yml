@@ -1,0 +1,60 @@
+version: 2.11.1
+apkFileName: DroidKlipp_Modified.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  tag: null
+sdkInfo:
+  minSdkVersion: 21
+  targetSdkVersion: 36
+packageInfo:
+  forcedPackageId: 127
+  renameManifestPackage: null
+versionInfo:
+  versionCode: 12056
+  versionName: 1.20.56
+sharedLibrary: false
+sparseResources: false
+compactEntries: false
+doNotCompress:
+- arsc
+- jpg
+- png
+- META-INF/androidx.activity_activity.version
+- META-INF/androidx.annotation_annotation-experimental.version
+- META-INF/androidx.appcompat_appcompat-resources.version
+- META-INF/androidx.appcompat_appcompat.version
+- META-INF/androidx.constraintlayout_constraintlayout.version
+- META-INF/androidx.core_core-ktx.version
+- META-INF/androidx.core_core-viewtree.version
+- META-INF/androidx.core_core.version
+- META-INF/androidx.cursoradapter_cursoradapter.version
+- META-INF/androidx.customview_customview.version
+- META-INF/androidx.drawerlayout_drawerlayout.version
+- META-INF/androidx.emoji2_emoji2-views-helper.version
+- META-INF/androidx.emoji2_emoji2.version
+- META-INF/androidx.fragment_fragment.version
+- META-INF/androidx.interpolator_interpolator.version
+- META-INF/androidx.loader_loader.version
+- META-INF/androidx.profileinstaller_profileinstaller.version
+- META-INF/androidx.savedstate_savedstate.version
+- META-INF/androidx.startup_startup-runtime.version
+- META-INF/androidx.tracing_tracing.version
+- META-INF/androidx.vectordrawable_vectordrawable-animated.version
+- META-INF/androidx.vectordrawable_vectordrawable.version
+- META-INF/androidx.versionedparcelable_versionedparcelable.version
+- META-INF/androidx.viewpager_viewpager.version
+- META-INF/kotlinx_coroutines_android.version
+- META-INF/kotlinx_coroutines_core.version
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm
+- res/raw/dualshock.raw
+- res/raw/n64.raw
+- res/raw/psx.raw
+- res/raw/retro.raw
+- res/raw/simpletheme.raw
+- res/raw/snes.raw
+- res/raw/sun.raw
+- res/raw/ultimatedroid.raw
+- res/raw/xsdl.raw

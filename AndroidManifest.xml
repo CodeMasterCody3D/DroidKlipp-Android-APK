@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="36" android:compileSdkVersionCodename="16" android:installLocation="auto" package="droidklipp.x.org.server" platformBuildVersionCode="36" platformBuildVersionName="16">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:maxSdkVersion="18" android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:maxSdkVersion="18" android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
+    <uses-feature android:name="android.software.leanback" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.gamepad" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.sensor" android:required="false"/>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="false" android:xlargeScreens="true"/>
+    <permission android:name="droidklipp.x.org.server.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="droidklipp.x.org.server.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:banner="@drawable/banner" android:extractNativeLibs="true" android:icon="@mipmap/ic_launcher" android:isGame="true" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:exported="true" android:label="@string/app_name" android:name="x.org.server.SetupActivity" android:noHistory="true" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="x.org.server.MainActivity" android:theme="@style/AppTheme" android:windowSoftInputMode="adjustUnspecified|stateUnspecified">
+            <intent-filter>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+                <action android:name="com.sec.android.airview.HOVER"/>
+                <category android:name="tv.ouya.intent.category.GAME"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true"/>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="x.org.server.RestartMainActivity" android:process=":RestartMainActivity" android:windowSoftInputMode="adjustUnspecified|stateUnspecified"/>
+        <service android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:enabled="true" android:foregroundServiceType="specialUse" android:name="x.org.server.DummyService">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Keep the X server running in background. Stopping it will terminate all X11 applications that are connected to this server."/>
+        </service>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:exported="true" android:label="@string/app_name" android:launchMode="standard" android:name="x.org.server.RunFromOtherApp" android:windowSoftInputMode="adjustUnspecified|stateUnspecified">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="x11"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="droidklipp.x.org.server.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

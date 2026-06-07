@@ -1,1 +1,0 @@
-../setCrossEnvironment-x86.sh
