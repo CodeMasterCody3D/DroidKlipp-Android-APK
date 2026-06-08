@@ -8,7 +8,7 @@ This project is an open-source fork/package derived from **XServer XSDL**, the A
 
 Download the latest APK from GitHub Releases:
 
-[Download DroidKlipp.apk](https://github.com/CodeMasterCody3D/DroidKlipp-Android-APK/releases/latest/download/DroidKlipp.apk)
+[Download DroidKlipp.apk](https://github.com/CodeMasterCody3D/DroidKlipp-Android-APK/releases/download/2.0.0/DroidKlipp.apk)
 
 Release page:
 
