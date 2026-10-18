@@ -1239,6 +1239,8 @@
 .method public swapBuffers()I
     .locals 4
 
+    invoke-static {}, Lx/org/server/Backlight;->onFrame()V
+
     .line 741
     invoke-super {p0}, Lx/org/server/GLSurfaceView_SDL$Renderer;->SwapBuffers()Z
 

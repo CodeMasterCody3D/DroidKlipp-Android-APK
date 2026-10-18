@@ -2715,6 +2715,8 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 17
 
+    invoke-static {}, Lx/org/server/Backlight;->init()V
+
     move-object/from16 v1, p0
 
     .line 117
@@ -3547,6 +3549,8 @@
 
 .method protected onPause()V
     .locals 3
+
+    invoke-static {}, Lx/org/server/Backlight;->restore()V
 
     .line 600
     sget-object v0, Lx/org/server/MainActivity;->downloader:Lx/org/server/DataDownloader;
@@ -4574,4 +4578,16 @@
     iput-boolean v0, v1, Lx/org/server/AccelerometerReader$GyroscopeListener;->invertedOrientation:Z
 
     return-void
+.end method
+
+.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 1
+
+    invoke-static {}, Lx/org/server/Backlight;->onTouch()V
+
+    invoke-super {p0, p1}, Landroid/app/Activity;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    return v0
 .end method

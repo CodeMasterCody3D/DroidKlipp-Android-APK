@@ -81,3 +81,11 @@ doltlibtool
 xserver.ent
 
 test-driver
+
+#
+#		DroidKlipp: this is an apktool project, never ignore decoded APK
+#		content (the X.Org patterns above match e.g. androidx/core/ and *.bin)
+#
+!/smali/**
+!/unknown/**
+/dist/
